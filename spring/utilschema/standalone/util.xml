@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/util
+    http://www.springframework.org/schema/util/spring-util.xsd">   
+    
+    
+    <!-- Preparing a Util Schema  -->
+    <util:list list-class="java.util.ArrayList" id="list1">
+    <value>Tayana Mobility</value>
+    <value>Tcs</value>
+    <value>Wipro</value>
+    <value>HCL</value>
+    </util:list>
+    <util:map map-class="java.util.HashMap" id="map1">
+    <entry key="Java Devloper" value="90000" />
+    <entry key="Back end Devloper" value="50000"/>
+    <entry key="Sql Devloper" value="45000"/>
+    </util:map>
+    <util:properties id="propref">
+    	<prop key="1">www.tayana.com</prop>
+    	<prop key="2">www.youtube.com</prop>
+    	<prop key="3">www.google.com</prop>
+    </util:properties>
+    
+    <bean class="com.spring.utilschema.standalone.Company" name="companay1">
+    <property name="names" ref="list1" /> 
+    <property name="designations" ref="map1" /> 
+    <property name="prop" ref="propref" />
+    
+    </bean>
+    
+   
+   
+</beans>

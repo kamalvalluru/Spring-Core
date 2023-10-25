@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd"> 
+    
+    <!-- This is the bean we are creating for the Independent Class 
+    	Which is the Student With Property Setter Injection -->
+    	<bean class="com.spring.auto.Student" name="section">
+    	<property name="name" value="Kamal"/>
+    	<property name="rollNo" value="20" />
+    	</bean> 
+    	<bean class="com.spring.auto.Student" name="section2">
+    	<property name="name" value="Kamal Basha"/>
+    	<property name="rollNo" value="10" />
+    	</bean>
+    	<bean class="com.spring.auto.Student" name="section3">
+    	<property name="name" value="Basha"/>
+    	<property name="rollNo" value="30" />
+    	</bean>   	   
+    	<bean class="com.spring.auto.School" name="school1" autowire="byType">
+    	<property name="section" ref="section" ></property>
+    	<property name="section2" ref="section2"></property>
+    	<property name="section3" ref="section3"></property>
+    	</bean>
+    	
+    
+  
+</beans>
